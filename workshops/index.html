@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <title>Workshops</title>
 </head>
 
 <body>
@@ -18,15 +18,21 @@
         <div class="gutter-right logo">
             <img src="../assets/big-logo.png" />
         </div>
-    </header>    
+    </header>
     <button id="logout">Logout</button>
     <main>
-        <h1>You are logged in!</h1>
+        <a href="../create/">Add participant</a>
+        <h2>Pick a Workshop</h2>
+        <div class="workshops-container">
+            <ul class="workshop-list"></ul>
+
+        </div>
+
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./create.js"></script>
 </body>
 
 </html>
