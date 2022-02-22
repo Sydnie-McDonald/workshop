@@ -38,7 +38,7 @@ window.addEventListener('load', async () => {
         // what the computer sees
         optionEl.value = workshop.id;
         // what the user sees
-        optionEl.textContent = workshop.name;
+        optionEl.textContent = workshop.wname;
 
         dropdown.append(optionEl);
     }

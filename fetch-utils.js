@@ -46,6 +46,7 @@ export async function getWorkshops() {
     // this will only grab items that belong to this user thanks to RLS and user_id property
     const response = await client
         .from('workshops').select('*, participants(*)');
+    console.log(response);
     return checkError(response);
 }
 
@@ -61,5 +62,3 @@ export async function createParticipant(name, workshop_id) {
 
     return checkError(response);
 }
-
-

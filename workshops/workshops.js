@@ -6,7 +6,7 @@ import {
 
 checkAuth();
 
-const workshopListEl = document.querySelector('.workshops-list');
+const workshopList = document.getElementById('workshops-container');
 
 const logoutButton = document.getElementById('logout');
 
@@ -20,8 +20,8 @@ window.addEventListener('load', async () => {
 
 async function fetchAndDisplayWorkshops() {
     const workshops = await getWorkshops();
-
-    workshopListEl.textContent = '';
+    console.log(workshopList);
+    workshopList.textContent = '';
 
     for (let workshop of workshops) {
         const workshopEl = document.createElement('div');
@@ -30,11 +30,11 @@ async function fetchAndDisplayWorkshops() {
 
         workshopEl.classList.add('workshop');
 
-        nameEl.textContent = workshop.name;
+        nameEl.textContent = workshop.wname;
 
         workshopEl.append(nameEl, participantsEl);
 
-        for (let participant of workshop.workshop_participants) {
+        for (let participant of workshops.participants) {
             const participantEl = document.createElement('p');
 
             participantEl.classList.add('participant');
@@ -43,11 +43,11 @@ async function fetchAndDisplayWorkshops() {
 
             //     fetchAndDisplayWorkshops();
             // });
-            participantEl.textContent = `${participant.name} : ${participant.contact}`;
+            participantEl.textContent = `${participant.name} : ${participant.workshop_id}`;
 
             participantsEl.append(participantEl);
         }
 
-        workshopListEl.append(workshopEl);
+        workshopList.append(workshopEl);
     }
 }
