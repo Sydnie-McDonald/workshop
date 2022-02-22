@@ -34,7 +34,7 @@ async function fetchAndDisplayWorkshops() {
 
         workshopEl.append(nameEl, participantsEl);
 
-        for (let participant of workshops.participants) {
+        for (let participant of workshop.participants) {
             const participantEl = document.createElement('p');
 
             participantEl.classList.add('participant');
@@ -43,7 +43,7 @@ async function fetchAndDisplayWorkshops() {
 
             //     fetchAndDisplayWorkshops();
             // });
-            participantEl.textContent = `${participant.name} : ${participant.workshop_id}`;
+            participantEl.textContent = `${participant.name}`;
 
             participantsEl.append(participantEl);
         }

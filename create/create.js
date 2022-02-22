@@ -16,13 +16,10 @@ form.addEventListener('submit', async (e) => {
     const data = new FormData(form);
 
     const name = data.get('name');
-    const workshop_id = data.get('workshop_id');
+    const workshopId = data.get('workshop_id');
 
     // let's make an object to pass as an argument to the createParticipant function
-    await createParticipant({
-        name: name,
-        workshop_id: workshop_id
-    });
+    await createParticipant(name, workshopId);
 
     window.location.href = '../workshops';
 });
