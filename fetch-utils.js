@@ -41,8 +41,25 @@ export async function logout() {
     return (window.location.href = '../');
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
+// getParticipants // getWorkshops // renderWorkshopsData
+export async function getWorkshops() {
+    // this will only grab items that belong to this user thanks to RLS and user_id property
+    const response = await client
+        .from('workshops').select('*, participants(*)');
+    return checkError(response);
+}
 
+export async function createParticipant(name, workshop_id) {
+    const response = await client
+        .from('participants')
+        .insert({
+            name: name,
+            workshop_id: workshop_id,
+            user_id: client.auth.user().id,
+        })
+        .single();
 
-
+    return checkError(response);
+}
 
 
