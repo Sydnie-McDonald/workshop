@@ -2,6 +2,7 @@ import {
     checkAuth,
     logout,
     getWorkshops,
+    deleteParticipant,
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -38,11 +39,11 @@ async function fetchAndDisplayWorkshops() {
             const participantEl = document.createElement('p');
 
             participantEl.classList.add('participant');
-            // participantEl.addEventListener('click', async () => {
-            //     await deleteParticipant(participant.id);
+            participantEl.addEventListener('click', async () => {
+                await deleteParticipant(participant.id);
 
-            //     fetchAndDisplayWorkshops();
-            // });
+                fetchAndDisplayWorkshops();
+            });
             participantEl.textContent = `${participant.name}`;
 
             participantsEl.append(participantEl);

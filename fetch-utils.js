@@ -62,3 +62,7 @@ export async function createParticipant(name, workshop_id) {
 
     return checkError(response);
 }
+export async function deleteParticipant(id) {
+    const response = await client.from('participants').delete().match({ id });
+    return checkError(response);
+}
