@@ -1,1 +1,12 @@
 /* add home page styles here */
+body{
+    background-color: blueviolet;
+    font-weight: bold;
+}
+#workshop-container{
+        display: inline;
+}
+a{
+    font-weight:bold;
+    font-size: 20px;
+}
